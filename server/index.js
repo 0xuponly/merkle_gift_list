@@ -17,9 +17,6 @@ app.post('/gift', (req, res) => {
   // Grab the parameters from the front-end here
   const { name, proof } = req.body;
 
-  console.log('Received proof:', proof);
-  console.log('Type of proof:', typeof proof);
-
   // Verify the proof
   const isInTheList = verifyProof(MERKLE_ROOT, name, proof);
 
