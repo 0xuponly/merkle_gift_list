@@ -4,7 +4,6 @@ const { hexToBytes, bytesToHex } = require('ethereum-cryptography/utils');
 const concat = (left, right) => keccak256(Buffer.concat([left, right]));
 
 function verifyProof(root, leaf, proof) {
-  console.log("ze proof: ", proof)
   proof = proof.map(({data, left}) => ({ 
     left, data: hexToBytes(data)
   }));
